@@ -148,9 +148,11 @@ Step 2: Run Docker with Environment Variables from .env
 
 -You can use the --env-file option in Docker to load environment variables from your .env file.
 
+$docker run --name postgres_container --env-file .env -p 0.0.0.0:35432:5432 -v pgdata:/var/lib/postgresql/data -d postgres
+
 $docker run --name my_postgres_container \
   --env-file .env \
-  -p 0.0.0.0:5432:5432 \
+  -p 0.0.0.0:35432:5432 \
   -v pgdata:/var/lib/postgresql/data \
   -d postgres
 
